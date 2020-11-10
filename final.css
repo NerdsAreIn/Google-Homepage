@@ -1,0 +1,178 @@
+html {
+    overflow: auto;
+    width: 100vw;
+    margin: 0;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none; 
+    }
+  body {
+    border: 2px solid red;
+    font: normal 14px/26px Arial;
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: auto 1fr max-content 1fr auto; 
+    grid-template-rows: 50px minmax(20px, 1fr) minmax(min-content, max-content) minmax(20px, 2fr) repeat(2, min-content);
+    grid-template-areas: 
+  'header header header header header'
+  '. . . . .'
+  '. . main . .'
+  '. . . . .'
+  'footer footer footer footer footer'
+  'nav nav nav nav nav';
+  }
+  header {
+    border: 2px solid black;
+    grid-area: header;
+  }
+  ul {
+    border: 2px solid blue;
+    list-style-type: none;
+    padding: 8px 15px;
+    color: rgb(110, 110, 110);
+    display: inline-block;
+  }
+  li {
+    border: 1px solid pink;
+    padding: 10px 8px; 
+    display: inline;
+    }
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline currentcolor;
+  }
+  #top-left-nav {
+    color: #444;
+  }
+  #top-right-nav {
+    color: #222;
+    float: right;
+  }
+  .more-space-li {
+    margin-left: 5px;
+  }
+  #grid-icon-background {
+    background: url("https://ssl.gstatic.com/gb/images/i1_1967ca6a.png") 27% 86%/auto;
+    opacity: 0.55;
+    height: 15px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #img-div {
+    display: inline-block;
+    height: 26px;
+    width: auto;
+    }
+  #account-icon {
+    border-radius: 50px;
+    height: 24px;
+    width: auto;
+    vertical-align: middle;
+        }
+  main {
+    border: 2px solid black;
+    padding: 10px;
+    grid-area: main;
+    display: grid; 
+    font: inherit;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(6, min-content);
+    grid-template-rows:  repeat (2, auto) repeat(2, min-content);
+    grid-template-areas:
+      '. image image image image .'
+      '. image image image image .'    
+      'form form form form form form'   
+      'form form form form form form';
+  }
+  form {
+    grid-area: form;
+    text-align: center;
+   }  
+  img#google-logo {
+    grid-area: image;
+    width: 250px;
+    height: auto;
+  }              
+  input  {
+    width: 450px;
+    height: 28px;
+    padding-left: 20px;
+    border-radius: 25px;
+    margin: 15px;
+    border: 1px solid lightgray;
+   }
+  input:hover, button:hover {
+    box-shadow: 2px 1px 5px lightgray;
+  }    
+  input:focus, button:focus {
+    outline: none;
+  }
+   button {
+     height: auto;
+     width: auto;
+     margin: 11px 4px;
+     padding: 0 16px;
+     background-color: rgba(242, 242, 242, 0.8);
+     color: rgb(95, 99, 104);
+     font: inherit;
+     border: none;
+     border-radius: 4px;  
+     cursor: pointer;
+  }
+  button:hover {
+    background-color: #f8f8f8;
+    color: #222;
+    border: 1px solid rgb(200, 200, 200);  
+  }
+   footer {
+    border-top: 1px solid rgb(220, 220, 220);
+    grid-area: footer;
+    background-color: rgba(235, 235, 235, 0.8);
+    padding: 8px 20px;
+    color: rgb(110, 110, 110);
+      }
+  #bottom-nav {
+    grid-area: nav;
+    border-top: 1px solid rgb(220, 220, 220);     
+    background-color: rgba(235, 235, 235, 0.8);
+    margin-left: -5px;
+    }
+  #left-bottom-list {
+    }
+  #right-bottom-list {
+    float: right;
+  }
+  @media (max-width: 800px)
+  {
+    #right-bottom-list, #left-bottom-list  {
+      display: block; 
+      margin: auto;
+      float: none;
+      width: max-content;
+    }
+  }
+  @media (max-height: 300px)
+  {
+   body {
+    grid-template-rows: 50px minmax(min-content, max-content) minmax(20px, 2fr) repeat(2, min-content);
+    grid-template-areas: 
+  'header header header header header'
+  '. . main . .'
+  '. . . . .'
+  'footer footer footer footer footer'
+  'nav nav nav nav nav';
+    }
+    #google-logo {
+      transform: scale(0.8, 0.8);
+    }
+  }

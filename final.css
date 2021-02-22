@@ -85,7 +85,7 @@ main {
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(6, min-content);
-  grid-template-rows:  repeat (2, auto) repeat(2, min-content);
+  grid-template-rows:  repeat(2, auto) repeat(2, min-content);
   grid-template-areas:
     '. image image image image .'
     '. image image image image .'    
@@ -107,7 +107,7 @@ input  {
   padding-left: 40px;
   border-radius: 25px;
   margin: 15px;
-  border: 1px solid lightgray
+  border: 1px solid lightgray;
 }
 #search-container {
   position: relative;
